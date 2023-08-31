@@ -106,7 +106,7 @@ export default function TransactionCard({ openModal, closeModal }) {
                 //     console.log('Download success!');
                 // }).catch(err => console.log(err.message));
 
-                const response = await axios.get(`https://moneylover-backend-production.up.railway.app/api/users/wallets/${walletSelect?.id}/ExportExcel`, {
+                const response = await axios.get(`https://moneyloverbe-production.up.railway.app/api/users/wallets/${walletSelect?.id}/ExportExcel`, {
                     responseType: "blob",
                     headers: {
                         'Authorization': `Bearer ${token}`

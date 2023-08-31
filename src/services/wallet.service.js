@@ -3,14 +3,14 @@ import axios from "axios";
 export class WalletService {
 
     static async getIcon() {
-        return await axios.get('https://moneylover-backend-production.up.railway.app/api/iconWallets');
+        return await axios.get('https://moneyloverbe-production.up.railway.app/api/iconWallets');
     }
     static async getCurrency() {
-        return await axios.get('https://moneylover-backend-production.up.railway.app/api/currencies');
+        return await axios.get('https://moneyloverbe-production.up.railway.app/api/currencies');
     }
     static async createWallet(data) {
         let token = localStorage.getItem('token');
-        return await axios.post(`https://moneylover-backend-production.up.railway.app/api/users/wallets`, data,
+        return await axios.post(`https://moneyloverbe-production.up.railway.app/api/users/wallets`, data,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -20,7 +20,7 @@ export class WalletService {
     }
     static async createDetailWallet(data) {
         let token = localStorage.getItem('token');
-        return await axios.post('https://moneylover-backend-production.up.railway.app/api/users/walletRoles', data,
+        return await axios.post('https://moneyloverbe-production.up.railway.app/api/users/walletRoles', data,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -30,7 +30,7 @@ export class WalletService {
     }
     static async getAllWallet() {
         let token = localStorage.getItem('token');
-        return await axios.get(`https://moneylover-backend-production.up.railway.app/api/users/wallets`,
+        return await axios.get(`https://moneyloverbe-production.up.railway.app/api/users/wallets`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -40,7 +40,7 @@ export class WalletService {
     }
     static async getInfoWallet(walletID) {
         let token = localStorage.getItem('token');
-        return await axios.get(`https://moneylover-backend-production.up.railway.app/api/users/wallets/${walletID}`,
+        return await axios.get(`https://moneyloverbe-production.up.railway.app/api/users/wallets/${walletID}`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -51,7 +51,7 @@ export class WalletService {
 
     static async updateWallet(walletID, data) {
         let token = localStorage.getItem('token');
-        return await axios.put(`https://moneylover-backend-production.up.railway.app/api/users/wallets/${walletID}`, data,
+        return await axios.put(`https://moneyloverbe-production.up.railway.app/api/users/wallets/${walletID}`, data,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -61,7 +61,7 @@ export class WalletService {
     }
     static async deleteWallet(walletID) {
         let token = localStorage.getItem('token');
-        return await axios.delete(`https://moneylover-backend-production.up.railway.app/api/users/wallets/${walletID}`,
+        return await axios.delete(`https://moneyloverbe-production.up.railway.app/api/users/wallets/${walletID}`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -71,7 +71,7 @@ export class WalletService {
     }
     static async tranferMoney(walletSelectID, data) {
         let token = localStorage.getItem('token');
-        return await axios.post(`https://moneylover-backend-production.up.railway.app/api/users/wallets/${walletSelectID}/transfer`, data,
+        return await axios.post(`https://moneyloverbe-production.up.railway.app/api/users/wallets/${walletSelectID}/transfer`, data,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -80,7 +80,7 @@ export class WalletService {
         )
     }
     // static async archivedWallet1(walletID) {
-    //     return await axios.post(`https://moneylover-backend-production.up.railway.app/api/users/wallets/4/archived`,
+    //     return await axios.post(`https://moneyloverbe-production.up.railway.app/api/users/wallets/4/archived`,
     //         {
     //             headers: {
     //                 'Authorization': `Bearer ${token}`
@@ -90,7 +90,7 @@ export class WalletService {
     // }
     static async archivedWallet(walletID) {
         let token = localStorage.getItem('token');
-        return await axios.get(`https://moneylover-backend-production.up.railway.app/api/users/wallets/${walletID}/archived`,
+        return await axios.get(`https://moneyloverbe-production.up.railway.app/api/users/wallets/${walletID}/archived`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -100,7 +100,7 @@ export class WalletService {
     }
     static async leaveWallet(walletRoleID, data) {
         let token = localStorage.getItem('token');
-        return await axios.put(`https://moneylover-backend-production.up.railway.app/api/users/walletRoles/${walletRoleID}`, data,
+        return await axios.put(`https://moneyloverbe-production.up.railway.app/api/users/walletRoles/${walletRoleID}`, data,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
